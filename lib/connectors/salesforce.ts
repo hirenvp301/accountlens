@@ -1,4 +1,4 @@
-import jsforce from 'jsforce'
+import { Connection } from 'jsforce'
 
 export interface SalesforceAccount {
   id: string
@@ -19,11 +19,11 @@ export interface SalesforceOpportunity {
   accountId: string
 }
 
-let _conn: jsforce.Connection | null = null
+let _conn: Connection | null = null
 
-async function getConnection(): Promise<jsforce.Connection> {
+async function getConnection(): Promise<Connection> {
   if (_conn) return _conn
-  _conn = new jsforce.Connection({ loginUrl: process.env.SALESFORCE_LOGIN_URL })
+  _conn = new Connection({ loginUrl: process.env.SALESFORCE_LOGIN_URL })
   await _conn.login(
     process.env.SALESFORCE_USERNAME!,
     process.env.SALESFORCE_PASSWORD!
