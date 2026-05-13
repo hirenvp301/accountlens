@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --green:        #1D9E75;
+  --green-hover:  #178a63;
+  --mint-tint:    #e6f5ef;
+  --mint-border:  #a8dfc9;
+  --text-primary: #111827;
+  --text-muted:   #6b7280;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  background: #f9fafb;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
